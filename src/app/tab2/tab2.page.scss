@@ -10,3 +10,16 @@
 .lista, ion-searchbar{
     width: 80%;
 }
+
+.category_content{
+  display: flex;
+  justify-content: center;  /* centraliza horizontal */
+  align-items: center;      /* centraliza vertical */
+  flex-direction: row;
+
+}
+
+ion-card{
+  width: 30%;
+  height: 30%;
+}

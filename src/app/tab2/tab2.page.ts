@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle , IonSearchbar, IonList, IonItem, IonLabel} from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
 @Component({
@@ -12,6 +12,11 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
     IonTitle, 
     IonContent, 
     ExploreContainerComponent,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
     IonSearchbar,
     IonList,
     IonItem,
@@ -27,10 +32,6 @@ export class Tab2Page {
     'Geneva',
     'Hong Kong',
     'Istanbul',
-    'London',
-    'Madrid',
-    'New York',
-    'Panama City',
   ];
   public results = [...this.data];
 
