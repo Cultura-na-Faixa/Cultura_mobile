@@ -1,17 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Cultura na Faixa
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <h1>Meus favoritos</h1>
+
+  <div class="tab3_content">
+    <ion-card class="ion-align-items-center">
+        <img alt="Silhouette of mountains" src="https://i.scdn.co/image/ab6761610000517467bc48f32d1cc16497865361" style="width: 400px; height: 230px;" />
+        <ion-card-header>
+        <ion-card-title>Charlie Brown Jr.</ion-card-title>
+        <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+      </ion-card-header>
+
+      <ion-card-content>
+        Sesc Popeia - 20/12 13h às 15h
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="ion-align-items-center">
+      <img alt="Silhouette of mountains" src="https://www.riodasostras.rj.gov.br/wp-content/uploads/2022/09/curso-de-dancas-urbanas-com-inscricoes-abertas-danca-urbanas.jpg" style="width: 400px; height: 230px;" />
+      <ion-card-header>
+        <ion-card-title>Ricardo & Moreno</ion-card-title>
+        <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+      </ion-card-header>
+
+      <ion-card-content>
+        Vale do Anhangabaú - 18/09 18h às 20h
+      </ion-card-content>
+    </ion-card>
+  </div>
+
 </ion-content>

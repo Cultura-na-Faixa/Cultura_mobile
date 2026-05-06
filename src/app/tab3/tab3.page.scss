@@ -1,0 +1,13 @@
+.tab3_content{
+  display: flex;
+  justify-content: center;  /* centraliza horizontal */
+  align-items: center;      /* centraliza vertical */
+  gap: 16px;
+  flex-direction: column;
+  
+}
+
+
+h1{
+    margin: 10px;
+}
