@@ -1,0 +1,12 @@
+.tab2_content{
+  display: flex;
+  justify-content: center;  /* centraliza horizontal */
+  align-items: center;      /* centraliza vertical */
+  gap: 16px;
+  flex-direction: column;
+
+}
+
+.lista, ion-searchbar{
+    width: 80%;
+}
