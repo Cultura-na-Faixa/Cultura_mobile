@@ -1,6 +1,30 @@
-ion-input{
+ion-input {
     background-color: rgb(75, 43, 43);
     margin: 10px; //rever
 }
 
 
+ion-button {
+    width: 30%;
+}
+
+.login {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    /* centraliza horizontal */
+    align-items: center;
+    /* centraliza vertical */
+    gap: 50px;
+    flex-direction: column;
+}
+
+.botao{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+    width: 85%;
+}
