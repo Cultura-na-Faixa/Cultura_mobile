@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton, IonIcon, IonModal,IonButtons } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logoGoogle} from 'ionicons/icons';
 
@@ -19,7 +19,9 @@ import { logoGoogle} from 'ionicons/icons';
     FormsModule,
     IonInput,
     IonButton,
-    IonIcon
+    IonIcon,
+    IonModal,
+    IonButtons
   ]
 })
 export class Tab4Page implements OnInit {
@@ -28,7 +30,13 @@ export class Tab4Page implements OnInit {
     addIcons({
       'logoGoogle': logoGoogle
     });
-   }
+   };
+
+   isModalOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  };
 
   ngOnInit() {
   }

@@ -16,8 +16,28 @@
 
 
     <div class="botao">
-      <ion-button>Entrar</ion-button>
-      <ion-button>Cadastrar</ion-button>
+      <ion-button class="entrar">Entrar</ion-button>
+      <!-- <ion-button>Cadastrar</ion-button> -->
+
+      <ion-button expand="block" (click)="setOpen(true)">Cadastrar</ion-button>
+      <ion-modal [isOpen]="isModalOpen">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Modal</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="setOpen(false)">Fechar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <form action="" class="login">
+              <ion-input label="Email" label-placement="floating" fill="outline" placeholder="Digite seu email"></ion-input>
+              <ion-input label="Senha" label-placement="floating" fill="outline" placeholder="Digite sua senha"></ion-input>
+            </form>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
     </div>
 
 
