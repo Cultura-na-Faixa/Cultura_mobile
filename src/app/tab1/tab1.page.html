@@ -9,83 +9,78 @@
 <ion-content [fullscreen]="true">
 
   <div class="tab1_content">
-    <ion-card class="ion-align-items-center" (click)="setOpen(true)">
-      <img alt="Carlinhos do Teclado"
-        src="https://files.pressmanager.net/clientes/625b13d2e0f9dc14e52ac4deac083e71/imagens/2025/02/18/82817132bcc406c20824c21a3c2e52e2.jpg"
-        style="width: 400px; height: 230px;" />
+    <ion-card *ngFor="let evento of eventos" (click)="abrirModal(evento)">
+
+      <img [src]="evento.imagem" [alt]="evento.titulo" style="width: 400px; height: 230px;" />
+
       <ion-card-header>
-        <ion-card-title>Carlinhos do Teclado</ion-card-title>
+        <ion-card-title>
+          {{ evento.titulo }}
+        </ion-card-title>
       </ion-card-header>
-      <ion-card-content> Sesc Pompeia - 20/12 13h às 15h </ion-card-content>
+
+      <ion-card-content>
+        {{ evento.local }} - {{ evento.data }}
+      </ion-card-content>
+
     </ion-card>
 
-    <!-- modal -->
     <ion-modal [isOpen]="isModalOpen">
+
       <ng-template>
         <ion-header>
           <ion-toolbar>
             <ion-title>Sobre o Show</ion-title>
+
             <ion-buttons slot="end">
-              <ion-button (click)="setOpen(false)">
+              <ion-button (click)="fecharModal()">
                 Fechar
               </ion-button>
             </ion-buttons>
+
           </ion-toolbar>
         </ion-header>
 
         <ion-content class="ion-padding">
-          <h2 class="ion-text-center">Carlinhos do Teclado</h2>
-          <img alt="Carlinhos do Teclado"
-            src="https://files.pressmanager.net/clientes/625b13d2e0f9dc14e52ac4deac083e71/imagens/2025/02/18/82817132bcc406c20824c21a3c2e52e2.jpg"
+          <h2 class="ion-text-center">
+            {{ eventoSelecionado?.titulo }}
+          </h2>
+          <img [src]="eventoSelecionado?.imagem" [alt]="eventoSelecionado?.titulo"
             style="width: 100%; height: 230px;" />
 
-          <div class=" info ion-display-flex ion-align-items-center">
+          <div class="info ion-display-flex ion-align-items-center">
             <img class="img_info" src="/assets/info.png" alt="info" style="width: 7%; height: 7%;">
             <h2>Informações</h2>
           </div>
+
           <p class="ion-text-justify">
-            O show contará com grandes sucessos do artista, participação especial de músicos convidados e um repertório
-            voltado para forró e música popular brasileira.
-          </p>
-          <p class="ion-text-justify">
-            O evento terá espaço para dança, praça de alimentação e interação com o público durante a apresentação.
+            {{ eventoSelecionado?.descricao }}
           </p>
 
-          <div class=" info ion-display-flex ion-align-items-center">
-            <img class="img_info" src="/assets/map.png" alt="info" style="width: 7%; height: 7%;">
+          <div class="info ion-display-flex ion-align-items-center">
+            <img class="img_info" src="/assets/map.png" alt="map" style="width: 7%; height: 7%;">
             <h2>Onde:</h2>
           </div>
+
           <p class="ion-text-justify">
-            Sesc Pompeia
+            {{ eventoSelecionado?.local }}
           </p>
 
-          <div class=" info ion-display-flex ion-align-items-center">
-            <img class="img_info" src="/assets/clock.png" alt="info" style="width: 7%; height: 7%;">
+          <div class="info ion-display-flex ion-align-items-center">
+            <img class="img_info" src="/assets/clock.png" alt="clock" style="width: 7%; height: 7%;">
             <h2>Quando:</h2>
           </div>
+
           <p class="ion-text-justify">
-            20/12 13h às 15h
+            {{ eventoSelecionado?.data }}
           </p>
 
         </ion-content>
+
       </ng-template>
+
     </ion-modal>
 
-
-
-    <ion-card class="ion-align-items-center">
-      <img alt="Silhouette of mountains"
-        src="https://p2.trrsf.com.br/image/fget/cf/478/481/smart/images.terra.com/2025/07/08/302523534-8-dupla-sertaneja-felipe-e-matheus-viralizou-em-2024-ao-fazer-show-sem-plateia.jpg"
-        style="width: 400px; height: 230px;" />
-      <ion-card-header>
-        <ion-card-title>Ricardo & Morenin</ion-card-title>
-        <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
-      </ion-card-header>
-
-      <ion-card-content>
-        Vale do Anhangabaú - 18/09 18h às 20h
-      </ion-card-content>
-    </ion-card>
 
   </div>
 
