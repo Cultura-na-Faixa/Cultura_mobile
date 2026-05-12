@@ -25,21 +25,21 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 })
 export class Tab2Page {
 
-  public data = [
-    'Amsterdam',
-    'Buenos Aires',
-    'Cairo',
-    'Geneva',
-    'Hong Kong',
-    'Istanbul',
-  ];
-  public results = [...this.data];
+  // public data = [
+  //   'Amsterdam',
+  //   'Buenos Aires',
+  //   'Cairo',
+  //   'Geneva',
+  //   'Hong Kong',
+  //   'Istanbul',
+  // ];
+  // public results = [...this.data];
 
-  handleInput(event: Event) {
-    const target = event.target as HTMLIonSearchbarElement;
-    const query = target.value?.toLowerCase() || '';
-    this.results = this.data.filter((d) => d.toLowerCase().includes(query));
-  }
+  // handleInput(event: Event) {
+  //   const target = event.target as HTMLIonSearchbarElement;
+  //   const query = target.value?.toLowerCase() || '';
+  //   this.results = this.data.filter((d) => d.toLowerCase().includes(query));
+  // }
 
   constructor() {}
 
