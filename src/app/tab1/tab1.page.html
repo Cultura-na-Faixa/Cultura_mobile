@@ -49,48 +49,33 @@
             {{ eventoSelecionado?.titulo }}
           </h2>
 
-          <img [src]="eventoSelecionado?.imagem" [alt]="eventoSelecionado?.titulo"
-            style="width: 100%; height: 230px;" />
+          <img [src]="eventoSelecionado?.imagem" [alt]="eventoSelecionado?.titulo" style="width: 100%; height: 230px;" />
 
-          <!-- INFORMAÇÕES -->
           <div class="info ion-display-flex ion-align-items-center">
-
             <img class="img_info" src="/assets/info.png" alt="info" style="width: 7%; height: 7%;">
-
             <h2>Informações</h2>
-
           </div>
 
           <p class="ion-text-justify">
             {{ eventoSelecionado?.descricao }}
           </p>
 
-          <!-- LOCAL -->
           <div class="info ion-display-flex ion-align-items-center">
-
             <img class="img_info" src="/assets/map.png" alt="map" style="width: 7%; height: 7%;">
-
             <h2>Onde:</h2>
-
           </div>
-
           <p class="ion-text-justify">
             {{ eventoSelecionado?.local }}
           </p>
 
-          <!-- DATA -->
           <div class="info ion-display-flex ion-align-items-center">
-
             <img class="img_info" src="/assets/clock.png" alt="clock" style="width: 7%; height: 7%;">
-
             <h2>Quando:</h2>
-
           </div>
 
           <p class="ion-text-justify">
             {{ eventoSelecionado?.data }}
           </p>
-
         </ion-content>
 
       </ng-template>
