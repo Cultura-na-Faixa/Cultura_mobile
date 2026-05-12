@@ -38,7 +38,6 @@ export class Tab1Page {
       imagem: 'https://files.pressmanager.net/clientes/625b13d2e0f9dc14e52ac4deac083e71/imagens/2025/02/18/82817132bcc406c20824c21a3c2e52e2.jpg',
       descricao: 'O show contará com grandes sucessos do artista.'
     },
-
     {
       titulo: 'Ricardo & Morenin',
       local: 'Vale do Anhangabaú',
