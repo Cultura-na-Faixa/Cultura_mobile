@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle,IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonContent } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
 @Component({
@@ -9,13 +9,13 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
   imports: [
     IonHeader, 
     IonToolbar, 
-    IonTitle, 
-    IonContent, 
+    IonTitle,
     ExploreContainerComponent,
     IonCard,
     IonCardHeader,
     IonCardTitle,
-    IonCardContent
+    IonCardContent,
+    IonContent
   ]
 })
 export class Tab3Page {

@@ -14,3 +14,14 @@
 .info h2{
   margin: 0;
 }
+
+.favorito{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+ion-icon{
+  padding-left: 70%;
+  font-size: 30px;
+}

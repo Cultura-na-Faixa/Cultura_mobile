@@ -14,8 +14,13 @@
       <img [src]="evento.imagem" [alt]="evento.titulo" style="width: 400px; height: 230px;" />
 
       <ion-card-header>
-        <ion-card-title>
+        <ion-card-title class="favorito">
           {{ evento.titulo }}
+          <!-- ação para quando favoritar -->
+          <ion-tab-button (click)="toggleFavorito(evento)">
+            <ion-icon [name]="evento.favorito ? 'heart-sharp' : 'heart-outline'">
+            </ion-icon>
+          </ion-tab-button>
         </ion-card-title>
       </ion-card-header>
 
@@ -49,7 +54,8 @@
             {{ eventoSelecionado?.titulo }}
           </h2>
 
-          <img [src]="eventoSelecionado?.imagem" [alt]="eventoSelecionado?.titulo" style="width: 100%; height: 230px;" />
+          <img [src]="eventoSelecionado?.imagem" [alt]="eventoSelecionado?.titulo"
+            style="width: 100%; height: 230px;" />
 
           <div class="info ion-display-flex ion-align-items-center">
             <img class="img_info" src="/assets/info.png" alt="info" style="width: 7%; height: 7%;">

@@ -1,7 +1,7 @@
 import { Component, EnvironmentInjector, inject } from '@angular/core';
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { triangle, ellipse, square, homeSharp, searchSharp, starSharp, personSharp } from 'ionicons/icons';
+import { triangle, ellipse, square, homeSharp, searchSharp, starSharp, personSharp, heartSharp } from 'ionicons/icons';
 
 @Component({
   selector: 'app-tabs',
@@ -21,7 +21,8 @@ export class TabsPage {
       'home-sharp': homeSharp,
       'searchSharp': searchSharp,
       'starSharp': starSharp,
-      'personSharp': personSharp
+      'personSharp': personSharp,
+      'heartSharp': heartSharp
     });
   }
 }
