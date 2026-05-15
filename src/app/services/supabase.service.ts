@@ -71,4 +71,53 @@ export class SupabaseService {
   return data;
   }
 
+  // **FAVORITOS**
+  async adicionarFavorito(evento: any) {
+  const user = await this.getUsuarioAtual();
+
+  if (!user) return;
+
+  const { error } = await this.supabase
+    .from('favoritos')
+    .insert({
+      user_id: user.id,
+      titulo: evento.titulo,
+      local: evento.local,
+      data: evento.data,
+      imagem: evento.imagem,
+      descricao: evento.descricao
+    });
+
+  if (error) throw error;
+}
+
+async removerFavorito(titulo: string) {
+  const user = await this.getUsuarioAtual();
+
+  if (!user) return;
+
+  const { error } = await this.supabase
+    .from('favoritos')
+    .delete()
+    .eq('user_id', user.id)
+    .eq('titulo', titulo);
+
+  if (error) throw error;
+}
+
+async getFavoritos() {
+  const user = await this.getUsuarioAtual();
+
+  if (!user) return [];
+
+  const { data, error } = await this.supabase
+    .from('favoritos')
+    .select('*')
+    .eq('user_id', user.id);
+
+  if (error) throw error;
+
+  return data;
+}
+
 }

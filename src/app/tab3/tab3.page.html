@@ -6,21 +6,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-
-  <!-- <h1>Meus favoritos</h1> -->
-
-  <div class="ion-display-flex ion-align-items-center ion-justify-content-center" style="height: 100%;">
+<!-- <ion-content [fullscreen]="true">
+ <div class="ion-display-flex ion-align-items-center ion-justify-content-center" style="height: 100%;">
     <ion-card color="tertiary">
       <ion-card-header>
         <ion-card-title class="ion-text-center" style="font-size: 30px;">Faça o login para acessar seus favoritos</ion-card-title>
-        <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
       </ion-card-header>
-      <!-- <ion-card-content> Card Content </ion-card-content> -->
     </ion-card>
-  </div>
+  </div> -->
 
-  <!-- <div class="tab3_content">
+<!-- <div class="tab3_content">
     <ion-card class="ion-align-items-center">
         <img alt="Silhouette of mountains" src="https://i.scdn.co/image/ab6761610000517467bc48f32d1cc16497865361" style="width: 400px; height: 230px;" />
         <ion-card-header>
@@ -43,5 +38,40 @@
       </ion-card-content>
     </ion-card>
   </div> -->
+
+<ion-content [fullscreen]="true">
+
+  <!-- NÃO LOGADO -->
+  <div *ngIf="!usuarioLogado" class="ion-display-flex ion-align-items-center ion-justify-content-center"
+    style="height: 100%;">
+
+    <ion-card color="tertiary">
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">
+          Faça login para acessar seus favoritos
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+  </div>
+
+  <!-- LOGADO -->
+  <div *ngIf="usuarioLogado">
+
+    <ion-card *ngFor="let evento of favoritos">
+      <img [src]="evento.imagem">
+      <ion-card-header>
+        <ion-card-title>
+          {{ evento.titulo }}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{ evento.local }}
+        <br>
+        {{ evento.data }}
+      </ion-card-content>
+    </ion-card>
+
+  </div>
 
 </ion-content>

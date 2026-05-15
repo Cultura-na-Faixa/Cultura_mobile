@@ -35,7 +35,6 @@
     <ion-modal [isOpen]="isModalOpen">
 
       <ng-template>
-
         <ion-header>
           <ion-toolbar>
             <ion-title>Sobre o Show</ion-title>
@@ -58,6 +57,7 @@
           <img [src]="eventoSelecionado?.imagem" [alt]="eventoSelecionado?.titulo"
             style="width: 100%; height: 230px;" />
 
+          <!-- INFORMAÇÃO  -->
           <div class="info ion-display-flex ion-align-items-center">
             <img class="img_info" src="/assets/info.png" alt="info" style="width: 7%; height: 7%;">
             <h2>Informações</h2>
@@ -67,6 +67,17 @@
             {{ eventoSelecionado?.descricao }}
           </p>
 
+          <!-- INFORMAÇÃO  -->
+          <div class="info ion-display-flex ion-align-items-center">
+            <img class="img_info" src="/assets/categoria.png" alt="info" style="width: 7%; height: 7%;">
+            <h2>Categoria:</h2>
+          </div>
+
+          <p class="ion-text-justify">
+            {{ eventoSelecionado?.categoria }}
+          </p>
+
+          <!-- ONDE -->
           <div class="info ion-display-flex ion-align-items-center">
             <img class="img_info" src="/assets/map.png" alt="map" style="width: 7%; height: 7%;">
             <h2>Onde:</h2>
@@ -75,6 +86,7 @@
             {{ eventoSelecionado?.local }}
           </p>
 
+          <!-- QUANDO -->
           <div class="info ion-display-flex ion-align-items-center">
             <img class="img_info" src="/assets/clock.png" alt="clock" style="width: 7%; height: 7%;">
             <h2>Quando:</h2>
