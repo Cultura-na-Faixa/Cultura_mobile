@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title class="ion-text-center">
+            Academia de Tharyndor
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="favorite" class="ion-padding">
+    <ion-text class="ion-text-center espaco-texto">
+        <h2>Academia de Tharyndor, invista no seu futuro!</h2>
+    </ion-text>
+    <p class="ion-text-muted espaco-texto">
+        Olá Aventureiro!
+    </p>
+    <p class="ion-text-muted espaco-texto">
+        Aqui na Academia de Tharyndor, você tem a oportunidade única de aprender profissões que
+        vão transformar sua jornada no mundo de Tharyndor!
+        Confira abaixo mais informações sobre as profissões e o catálogo completo disponível na Academia:
+    </p>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12" offset="0" size-md="6" offset-md="0" size-lg="5" offset-lg="1">
+                <!-- **botão para navegar em outra página** -->
+                <ion-card button="true" [routerLink]="['/prof-comum']" color="primary" style="border: 1px solid rgb(185, 184, 184);">
+                    <img src="assets/Imagens/ProfEsp.png" alt="ícone de profissões comuns" />
+                    <ion-card-header>
+                        <ion-card-title> Profissões Comuns</ion-card-title>
+                        <ion-card-subtitle>São profissões que possuem um tempo menor de aprendizado, geralmente associadas a profissões mais simples.</ion-card-subtitle>
+                    </ion-card-header>
+                </ion-card>
+            </ion-col>
+
+            <ion-col size="12" offset="0" size-md="6" offset-md="0" size-lg="5" offset-lg="0">
+                <ion-card button="true" [routerLink]="['/prof-esp']" color="primary"
+                    style="border: 1px solid rgb(185, 184, 184);">
+                    <img src="assets/Imagens/ProfComum.png" alt="Descrição" />
+                    <ion-card-header>
+                        <ion-card-title> Profissões Especializadas</ion-card-title>
+                        <ion-card-subtitle>São profissões que demandam mais tempo de aprendizado, elas tem recursos únicos como criação de itens ou mapas.</ion-card-subtitle>
+                    </ion-card-header>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-justify-content-center">
+            <ion-col size="12" offset="0" size-md="6" offset-md="1" size-lg="5" offset-lg="0">
+                <ion-card button="true" [routerLink]="['/prof-alternativa']" color="primary"
+                    style="border: 1px solid rgb(185, 184, 184);">
+                    <img src="assets/Imagens/teste.png" alt="Descrição" />
+                    <ion-card-header>
+                        <ion-card-title> Profissões Alternativas</ion-card-title>
+                        <ion-card-subtitle>Profissões que podem ser vistas como Hobby para o dia a dia, a maioria dos aventureiros são habitos a realizarem.</ion-card-subtitle>
+                    </ion-card-header>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profissões Alternativas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+
+      <ion-col size="12" size-md="6" size-lg="5" offset-lg="1">
+        <ion-card class="card-rpg" routerLink="/prof-detalhe-a/pescador" color="secondary" style="border: 1px solid rgb(185, 184, 184);">
+          <img src="assets/Imagens/teste.png" class="img-profissao" />
+          <ion-card-header>
+            <ion-card-title>Pescador</ion-card-title>
+            <ion-card-subtitle>Profissão</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Especialista em rios de Tharyndor.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="6" size-lg="5">
+        <ion-card class="card-rpg" routerLink="/prof-detalhe-a/mercenario" color="secondary"
+          style="border: 1px solid rgb(185, 184, 184);">
+          <img alt="Mercenário" src="assets/Imagens/teste.png" class="img-profissao" />
+          <ion-card-header>
+            <ion-card-title>Mercenário</ion-card-title>
+            <ion-card-subtitle>Profissão</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Focado em contratos e ouro.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

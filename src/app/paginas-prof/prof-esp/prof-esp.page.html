@@ -1,0 +1,61 @@
+<!--Mesmas configurações de pag1.page.html, com mudanças visuais de cores, conteúdos e imagens-->
+<ion-header>
+  <ion-toolbar color="secondary">
+    <!-- **botão para voltar na página anterior** -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profissões Especializadas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+
+      <ion-col size="12" offset="0" size-md="6" offset-md="0" size-lg="5" offset-lg="1">
+        <!-- **botão navegar para outra página** -->
+        <ion-card button="true" [routerLink]="['/prof-detalhe-e', 'alquimista']" color="secondary"
+          style="border: 1px solid rgb(185, 184, 184);">
+          <img src="assets/Imagens/alquimista.png" alt="Descrição" />
+          <ion-card-header>
+            <ion-card-title>Alquimista</ion-card-title>
+            <ion-card-subtitle>Alquimista e Herbalista</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Especializado em como lidar com diversos ingredientes para retirar o melhor que pode oferecer.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" offset="0" size-md="6" offset-md="0" size-lg="5" offset-lg="0">
+        <ion-card button="true" [routerLink]="['/prof-detalhe-e', 'escriba']" color="secondary"
+          style="border: 1px solid rgb(185, 184, 184);">
+          <img src="assets/Imagens/escriba.png" alt="Descrição" />
+          <ion-card-header>
+            <ion-card-title>Escriba</ion-card-title>
+            <ion-card-subtitle>Calígrafo, Cartógrafo e Pintor</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Para quem se sente bem em meio aos livros e papéis, responsável por lidar com diversas informações.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" offset="0" size-md="6" offset-md="0" size-lg="5" offset-lg="1">
+        <ion-card button="true" [routerLink]="['/prof-detalhe-e', 'joalheiro']" color="secondary"
+          style="border: 1px solid rgb(185, 184, 184);">
+          <img src="assets/Imagens/joalheiro.png" alt="Descrição" />
+          <ion-card-header>
+            <ion-card-title>Joalheiro</ion-card-title>
+            <ion-card-subtitle>Joalheiro, Metalúrgico </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Para quem busca trabalhos delicados de alto valor, utilizando os melhores itens e metáis.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

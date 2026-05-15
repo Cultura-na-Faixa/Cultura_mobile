@@ -1,0 +1,71 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px; 
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+ion-content {
+  // Definição da cor de fundo do projeto
+  --background: #181515 !important; 
+}
+
+// Criado para trazer uma definição a todas as imagens dos card criados
+ion-card img {
+  width: 100%;       // Garante que a imagem ocupe toda a largura do card
+  height: 200px;     // Define uma altura fixa igual para todos os card
+  object-fit: cover; // Corta as bordas da imagem para preencher sem distorcer a imagem
+  display: block;    // Remove espaços vazios estranhos embaixo da imagem
+}
+
+//Criado para fazer com que todos os cards tenham a mesma altura total
+ion-card {
+  height: 100%;      // Faz com que o card tente ocupar todo o espaço da coluna
+  display: flex;
+  flex-direction: column;
+}
+
+//Criado para mover o texto, fazendo com que ele tenha um espaço igual de ambos os lados.
+.espaco-texto{
+  padding: 0 10%;
+  //padding-left: 130px; //espaço na esquerda
+  //padding-right: 130px; //espaço na direita
+}
+
+ion-card-header {
+  display: flex;
+  flex-direction: column;
+}
+
+ion-card-title {
+  order: 1;
+}
+
+ion-card-subtitle {
+  order: 2;
+}
+
+ion-card-content {
+  order: 3;
+}
