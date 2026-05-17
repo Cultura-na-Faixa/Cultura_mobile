@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonContent, IonTabButton, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { SupabaseService } from '../services/supabase.service';
 import { CommonModule } from '@angular/common';
@@ -18,7 +18,10 @@ import { CommonModule } from '@angular/common';
     IonCardTitle,
     IonCardContent,
     IonContent,
-    CommonModule
+    CommonModule,
+    IonTabButton,
+    IonIcon,
+    IonButton
   ]
 })
 export class Tab3Page implements OnInit {
@@ -85,17 +88,48 @@ export class Tab3Page implements OnInit {
     await this.carregarFavoritos();
   }
 
-  async carregarFavoritos() {
-    const user = await this.supabase.getUsuarioAtual();
+   async toggleFavorito(evento: any, event: Event) {
+    event.stopPropagation(); // evita abrir o modal ao clicar no coração
 
-    if (user) {
-      this.usuarioLogado = true;
-      const ids = await this.supabase.getFavoritos();
-      this.favoritos = this.todosEventos.filter(e => ids.includes(e.id));
+    const user = await this.supabase.getUsuarioAtual();
+    if (!user) {
+      alert('Faça login para favoritar');
+      return;
+    }
+
+    evento.favorito = !evento.favorito;
+
+    if (evento.favorito) {
+      await this.supabase.adicionarFavorito(evento.id);
     } else {
-      this.usuarioLogado = false;
-      this.favoritos = [];
+      await this.supabase.removerFavorito(evento.id);
     }
   }
+
+  async carregarFavoritos() {
+
+  const user = await this.supabase.getUsuarioAtual();
+
+  if (user) {
+
+    this.usuarioLogado = true;
+
+    const ids = await this.supabase.getFavoritos();
+
+    this.favoritos = this.todosEventos
+      .filter(e => ids.includes(e.id))
+      .map(evento => ({
+        ...evento,
+        favorito: true
+      }));
+
+  } else {
+
+    this.usuarioLogado = false;
+    this.favoritos = [];
+
+  }
+
+}
 
 }

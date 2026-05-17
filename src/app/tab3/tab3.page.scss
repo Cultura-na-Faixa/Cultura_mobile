@@ -1,4 +1,4 @@
-.tab3_content{
+.card_fav{
   display: flex;
   justify-content: center;  /* centraliza horizontal */
   align-items: center;      /* centraliza vertical */
@@ -7,7 +7,12 @@
   
 }
 
-
 h1{
     margin: 10px;
+}
+
+.favorito{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

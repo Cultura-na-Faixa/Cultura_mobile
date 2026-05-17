@@ -1,84 +1,6 @@
-<!--<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Cultura na Faixa
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<!-- <ion-content [fullscreen]="true">
- <div class="ion-display-flex ion-align-items-center ion-justify-content-center" style="height: 100%;">
-    <ion-card color="tertiary">
-      <ion-card-header>
-        <ion-card-title class="ion-text-center" style="font-size: 30px;">Faça o login para acessar seus favoritos</ion-card-title>
-      </ion-card-header>
-    </ion-card>
-  </div> -->
-
-<!-- <div class="tab3_content">
-    <ion-card class="ion-align-items-center">
-        <img alt="Silhouette of mountains" src="https://i.scdn.co/image/ab6761610000517467bc48f32d1cc16497865361" style="width: 400px; height: 230px;" />
-        <ion-card-header>
-        <ion-card-title>Charlie Brown Jr.</ion-card-title>
-      </ion-card-header>
-
-      <ion-card-content>
-        Sesc Popeia - 20/12 13h às 15h
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card class="ion-align-items-center">
-      <img alt="Silhouette of mountains" src="https://www.riodasostras.rj.gov.br/wp-content/uploads/2022/09/curso-de-dancas-urbanas-com-inscricoes-abertas-danca-urbanas.jpg" style="width: 400px; height: 230px;" />
-      <ion-card-header>
-        <ion-card-title>Ricardo & Moreno</ion-card-title>
-      </ion-card-header>
-
-      <ion-card-content>
-        Vale do Anhangabaú - 18/09 18h às 20h
-      </ion-card-content>
-    </ion-card>
-  </div> -->
-
-<!--<ion-content [fullscreen]="true">
-
-  <-- NÃO LOGADO ->
-  <div *ngIf="!usuarioLogado" class="ion-display-flex ion-align-items-center ion-justify-content-center"
-    style="height: 100%;">
-
-    <ion-card color="tertiary">
-      <ion-card-header>
-        <ion-card-title class="ion-text-center">
-          Faça login para acessar seus favoritos
-        </ion-card-title>
-      </ion-card-header>
-    </ion-card>
-
-  </div>
-
-  <-- LOGADO ->
-  <div *ngIf="usuarioLogado">
-
-    <ion-card *ngFor="let evento of favoritos">
-      <img [src]="evento.imagem">
-      <ion-card-header>
-        <ion-card-title>
-          {{ evento.titulo }}
-        </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        {{ evento.local }}
-        <br>
-        {{ evento.data }}
-      </ion-card-content>
-    </ion-card>
-
-  </div>
-
-</ion-content>-->
-
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="ion-text-center">
       Cultura na Faixa
     </ion-title>
   </ion-toolbar>
@@ -111,12 +33,17 @@
   </div>
 
   <!-- LOGADO COM FAVORITOS -->
-  <div *ngIf="usuarioLogado && favoritos.length > 0">
+  <div class="card_fav" *ngIf="usuarioLogado && favoritos.length > 0">
     <ion-card *ngFor="let evento of favoritos">
       <img [src]="evento.imagem" [alt]="evento.titulo" style="width: 400px; height: 230px;" />
       <ion-card-header>
-        <ion-card-title>
+        <ion-card-title class="favorito">
           {{ evento.titulo }}
+          <!-- ação para quando favoritar -->
+          <ion-tab-button fill="clear" (click)="toggleFavorito(evento, $event)">
+            <ion-icon [name]="evento.favorito ? 'heart-sharp' : 'heart-outline'">
+            </ion-icon>
+          </ion-tab-button>
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>

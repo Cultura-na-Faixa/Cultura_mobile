@@ -1,14 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <!-- essa bomba é o botão de voltar que fica quando clica em uma categoria-->
-    <!-- MAS ele não ta aparecendo ??? (se você clicar do canto << da toolbar ele está funcionando, só não quer aparecer)-->
     <ion-buttons slot="start">
       <ion-button *ngIf="categoriaAtiva" (click)="voltar()" class="botao_voltar">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
 
-    <ion-title>
+    <ion-title class="ion-text-center">
       {{ categoriaAtiva ? categoriaAtiva : 'Cultura na Faixa' }}
     </ion-title>
 
