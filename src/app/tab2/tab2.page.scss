@@ -38,7 +38,7 @@ ion-searchbar{
   display: flex;
   justify-content: center;  /* centraliza horizontal */
   align-items: center;      /* centraliza vertical */
-  // gap: 16px;
+  gap: 16px;
   flex-direction: column;
 }
 
@@ -53,11 +53,6 @@ ion-searchbar{
   align-items: center;
 }
 
-.favorito {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 
 // ion-icon {
 //   padding-left: 20%;

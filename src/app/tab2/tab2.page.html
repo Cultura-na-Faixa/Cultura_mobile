@@ -35,7 +35,7 @@
       <ion-card *ngFor="let evento of eventosFiltrados">
         <img [src]="evento.imagem" [alt]="evento.titulo" style="width: 400px; height: 230px;" />
         <ion-card-header>
-          <ion-card-title>
+          <ion-card-title class="favorito">
             {{ evento.titulo }}
             <!-- ação para quando favoritar -->
             <ion-tab-button class="favorito" (click)="toggleFavorito(evento, $event)">
