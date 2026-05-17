@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   flex-direction: column;
   margin-top: 10%;
 }
@@ -11,6 +11,11 @@
   width: 80%;
 }
 
+ion-searchbar{
+  font-size: 50%;
+}
+
+// categorias
 .category_content {
   display: flex;
   justify-content: center;
@@ -25,7 +30,7 @@
 }
 
 .card_categoria ion-card-title {
-  font-size: 70%;
+  font-size: 100%;
 }
 
 // cards de eventos (busca e modal) ficam igual tab1
@@ -33,7 +38,7 @@
   display: flex;
   justify-content: center;  /* centraliza horizontal */
   align-items: center;      /* centraliza vertical */
-  gap: 16px;
+  // gap: 16px;
   flex-direction: column;
 }
 
@@ -48,17 +53,24 @@
   align-items: center;
 }
 
-ion-icon {
-  padding-left: 70%;
-  font-size: 30px;
+.favorito {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-/*.btn_voltar {
-  padding: 8px 16px;
-}*/
+// ion-icon {
+//   padding-left: 20%;
+//   font-size: 30px;
+// }
 
 .botao_voltar {
    width: 85px;
    height: auto;
    margin-left: -35%;
+}
+
+
+.category_image{
+  width: 100%;
 }

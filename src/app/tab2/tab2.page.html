@@ -37,18 +37,21 @@
       <ion-card *ngFor="let evento of eventosFiltrados">
         <img [src]="evento.imagem" [alt]="evento.titulo" style="width: 400px; height: 230px;" />
         <ion-card-header>
-          <ion-card-title class="favorito">
+          <ion-card-title>
             {{ evento.titulo }}
-            <ion-tab-button (click)="toggleFavorito(evento, $event)">
-              <ion-icon [name]="evento.favorito ? 'heart-sharp' : 'heart-outline'"></ion-icon>
+            <!-- ação para quando favoritar -->
+            <ion-tab-button class="favorito" (click)="toggleFavorito(evento, $event)">
+              <ion-icon [name]="evento.favorito ? 'heart-sharp' : 'heart-outline'">
+              </ion-icon>
             </ion-tab-button>
           </ion-card-title>
         </ion-card-header>
         <ion-card-content>
           {{ evento.local }} - {{ evento.data }}
         </ion-card-content>
+
       </ion-card>
-      
+
     </div>
 
   </div>
@@ -58,16 +61,14 @@
 
     <div class="category_content">
       <ion-card class="card_categoria" (click)="abrirCategoria('Música')">
-        <img alt="Música"
-          src="https://t3.ftcdn.net/jpg/03/01/43/92/360_F_301439209_vpF837oCGM1lp0cnC7stzCBn3th0dQ6O.jpg" />
+        <img class="category_image" alt="Música" src="https://t3.ftcdn.net/jpg/03/01/43/92/360_F_301439209_vpF837oCGM1lp0cnC7stzCBn3th0dQ6O.jpg" />
         <ion-card-header>
           <ion-card-title class="ion-text-center">Música</ion-card-title>
         </ion-card-header>
       </ion-card>
 
       <ion-card class="card_categoria" (click)="abrirCategoria('Teatro')">
-        <img alt="Teatro"
-          src="https://img.freepik.com/vetores-premium/ilustracao-vetorial-de-icones-de-materiais-de-educacao_1287271-8206.jpg?semt=ais_hybrid&w=740&q=80" />
+        <img class="category_image"  alt="Teatro" src="https://img.freepik.com/vetores-premium/ilustracao-vetorial-de-icones-de-materiais-de-educacao_1287271-8206.jpg?semt=ais_hybrid&w=740&q=80" />
         <ion-card-header>
           <ion-card-title class="ion-text-center">Teatro</ion-card-title>
         </ion-card-header>
@@ -76,16 +77,14 @@
 
     <div class="category_content">
       <ion-card class="card_categoria" (click)="abrirCategoria('Cinema')">
-        <img alt="Cinema"
-          src="https://static.vecteezy.com/ti/vetor-gratis/p1/3065406-flat-design-concept-cinema-icon-gratis-vetor.jpg" />
+        <img class="category_image"  alt="Cinema" src="https://static.vecteezy.com/ti/vetor-gratis/p1/3065406-flat-design-concept-cinema-icon-gratis-vetor.jpg" />
         <ion-card-header>
           <ion-card-title class="ion-text-center">Cinema</ion-card-title>
         </ion-card-header>
       </ion-card>
 
       <ion-card class="card_categoria" (click)="abrirCategoria('Dança')">
-        <img alt="Dança"
-          src="https://www.shutterstock.com/image-vector/dancing-couple-silhouette-logo-icon-600nw-2503861073.jpg" />
+        <img class="category_image"  alt="Dança" src="https://www.shutterstock.com/image-vector/dancing-couple-silhouette-logo-icon-600nw-2503861073.jpg" />
         <ion-card-header>
           <ion-card-title class="ion-text-center">Dança</ion-card-title>
         </ion-card-header>
@@ -102,20 +101,20 @@
     </div>
 
     <div class="card_evento">
-    <ion-card class="card_evento" *ngFor="let evento of eventosFiltrados">
-      <img [src]="evento.imagem" [alt]="evento.titulo" style="width: 400px; height: 230px;" />
-      <ion-card-header>
-        <ion-card-title class="favorito">
-          {{ evento.titulo }}
-          <ion-tab-button (click)="toggleFavorito(evento, $event)">
-            <ion-icon [name]="evento.favorito ? 'heart-sharp' : 'heart-outline'"></ion-icon>
-          </ion-tab-button>
-        </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        {{ evento.local }} - {{ evento.data }}
-      </ion-card-content>
-    </ion-card>
+      <ion-card class="card_evento" *ngFor="let evento of eventosFiltrados">
+        <img [src]="evento.imagem" [alt]="evento.titulo" style="width: 400px; height: 230px;" />
+        <ion-card-header>
+          <ion-card-title class="favorito">
+            {{ evento.titulo }}
+            <ion-tab-button (click)="toggleFavorito(evento, $event)">
+              <ion-icon [name]="evento.favorito ? 'heart-sharp' : 'heart-outline'"></ion-icon>
+            </ion-tab-button>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{ evento.local }} - {{ evento.data }}
+        </ion-card-content>
+      </ion-card>
     </div>
 
   </div>
