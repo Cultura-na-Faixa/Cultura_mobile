@@ -1,61 +1,3 @@
-<!--<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Cultura na Faixa
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-
-  <div class="login">
-    <h1>Login</h1>
-
-    <ion-input label="Email" label-placement="floating" fill="outline" placeholder="Digite seu email"></ion-input>
-    <ion-input label="Senha" label-placement="floating" fill="outline" placeholder="Digite sua senha"></ion-input>
-
-
-    <div class="botao">
-      <ion-button class="entrar">Entrar</ion-button>
-      <!-- <ion-button>Cadastrar</ion-button> 
-
-      <ion-button expand="block" (click)="setOpen(true)">Cadastrar</ion-button>
-      <ion-modal [isOpen]="isModalOpen">
-        <ng-template>
-          <ion-header>
-            <ion-toolbar>
-              <ion-title>Modal</ion-title>
-              <ion-buttons slot="end">
-                <ion-button (click)="setOpen(false)">Fechar</ion-button>
-              </ion-buttons>
-            </ion-toolbar>
-          </ion-header>
-          <ion-content class="ion-padding">
-            <form action="" class="login">
-              <ion-input label="Nome" label-placement="floating" fill="outline" placeholder="Digite seu nome"></ion-input>
-              <!--<ion-input label="Sobrenome" label-placement="floating" fill="outline" placeholder="Digite seu sobrenome"></ion-input>
-              <ion-input label="Email" label-placement="floating" fill="outline" placeholder="Digite seu email"></ion-input>
-              <ion-input label="Senha" label-placement="floating" fill="outline" placeholder="Digite sua senha"></ion-input>
-            </form>
-
-            <div class="ion-display-flex ion-justify-content-center">
-              <ion-button style="width: 30%;">Cadastrar</ion-button>
-            </div>
-          </ion-content>
-        </ng-template>
-      </ion-modal>
-    </div>
-
-
-    <div class="outras">
-      <h2>Outras formas de login</h2>
-      <img src="/assets/google.png" alt="" style="width: 50px; height: auto;">
-    </div>
-
-  </div>
-
-</ion-content>-->
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Cultura na Faixa</ion-title>
@@ -89,7 +31,10 @@
 
   <!-- LOGIN (não logado) -->
   <div *ngIf="!usuarioLogado" class="login">
+    <div class="ion-display-flex ion-flex-column ion-align-items-center">
+    <img style="width: 80%; height: 5%;" src="/assets/cultura_na_faixa.png" alt="">
     <h1>Login</h1>
+    </div>
 
     <ion-input label="Email" label-placement="floating" fill="outline" placeholder="Digite seu email"
       [(ngModel)]="loginEmail">
@@ -102,8 +47,8 @@
     <p *ngIf="mensagem" class="erro">{{ mensagem }}</p>
 
     <div class="botao">
-      <ion-button class="entrar" (click)="entrar()">Entrar</ion-button>
-      <ion-button expand="block" (click)="setOpen(true)">Cadastrar</ion-button>
+      <ion-button class="botoes" (click)="entrar()">Entrar</ion-button>
+      <ion-button class="botoes" expand="block" (click)="setOpen(true)">Cadastrar</ion-button>
 
       <ion-modal [isOpen]="isModalOpen">
         <ng-template>
@@ -132,7 +77,7 @@
               <p *ngIf="mensagemCadastro">{{ mensagemCadastro }}</p>
 
               <div class="ion-display-flex ion-justify-content-center">
-                <ion-button style="width: 80%;" (click)="cadastrar()">Cadastrar</ion-button>
+                <ion-button class="botoes" style="width: 100%;" (click)="cadastrar()">Cadastrar</ion-button>
               </div>
             </div>
           </ion-content>
@@ -140,10 +85,10 @@
       </ion-modal>
     </div>
 
-    <div class="outras">
+    <!-- <div class="outras">
       <h2>Outras formas de login</h2>
       <img src="/assets/google.png" alt="" style="width: 50px; height: auto;">
-    </div>
+    </div> -->
   </div>
 
 </ion-content>
