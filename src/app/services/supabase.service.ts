@@ -71,53 +71,47 @@ export class SupabaseService {
   return data;
   }
 
-  // **FAVORITOS**
-  async adicionarFavorito(evento: any) {
+ // ADICIONAR FAVORITO
+async adicionarFavorito(eventoId: number) {
   const user = await this.getUsuarioAtual();
-
   if (!user) return;
 
   const { error } = await this.supabase
     .from('favoritos')
     .insert({
       user_id: user.id,
-      titulo: evento.titulo,
-      local: evento.local,
-      data: evento.data,
-      imagem: evento.imagem,
-      descricao: evento.descricao
+      evento_id: eventoId
     });
 
   if (error) throw error;
 }
 
-async removerFavorito(titulo: string) {
+// REMOVER FAVORITO
+async removerFavorito(eventoId: number) {
   const user = await this.getUsuarioAtual();
-
   if (!user) return;
 
   const { error } = await this.supabase
     .from('favoritos')
     .delete()
     .eq('user_id', user.id)
-    .eq('titulo', titulo);
+    .eq('evento_id', eventoId);
 
   if (error) throw error;
 }
 
-async getFavoritos() {
+// BUSCAR IDs DOS FAVORITOS DO USUÁRIO
+async getFavoritos(): Promise<number[]> {
   const user = await this.getUsuarioAtual();
-
   if (!user) return [];
 
   const { data, error } = await this.supabase
     .from('favoritos')
-    .select('*')
+    .select('evento_id')
     .eq('user_id', user.id);
 
   if (error) throw error;
-
-  return data;
+  return data.map((f: any) => f.evento_id);
 }
 
 }

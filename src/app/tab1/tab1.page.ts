@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton, IonModal, IonButtons, IonTabButton, IonIcon } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { CommonModule } from '@angular/common';
@@ -29,10 +29,9 @@ import { SupabaseService } from '../services/supabase.service';
     IonIcon
   ],
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
 
   isModalOpen = false;
-
   eventoSelecionado: any;
 
   eventos = [
@@ -88,6 +87,27 @@ export class Tab1Page {
     }
   ];
 
+  constructor(private supabase: SupabaseService) {
+    addIcons({
+      triangle,
+      ellipse,
+      square,
+      'heartSharp': heartSharp,
+      'heartOutline': heartOutline
+    });
+  }
+
+  async ngOnInit() {
+    await this.carregarFavoritos();
+  }
+
+  async carregarFavoritos() {
+    const ids = await this.supabase.getFavoritos();
+    this.eventos.forEach(evento => {
+      evento.favorito = ids.includes(evento.id);
+    });
+  }
+
   abrirModal(evento: any) {
     this.eventoSelecionado = evento;
     this.isModalOpen = true;
@@ -97,11 +117,10 @@ export class Tab1Page {
     this.isModalOpen = false;
   }
 
-
-  async toggleFavorito(evento: any) {
+  async toggleFavorito(evento: any, event: Event) {
+    event.stopPropagation(); // evita abrir o modal ao clicar no coração
 
     const user = await this.supabase.getUsuarioAtual();
-
     if (!user) {
       alert('Faça login para favoritar');
       return;
@@ -110,27 +129,11 @@ export class Tab1Page {
     evento.favorito = !evento.favorito;
 
     if (evento.favorito) {
-
-      await this.supabase.adicionarFavorito(evento);
-
+      await this.supabase.adicionarFavorito(evento.id);
     } else {
-
-      await this.supabase.removerFavorito(evento.titulo);
-
+      await this.supabase.removerFavorito(evento.id);
     }
   }
 
-  constructor(private supabase: SupabaseService) {
-
-    addIcons({
-      triangle,
-      ellipse,
-      square,
-      'heartSharp': heartSharp,
-      'heartOutline': heartOutline
-    });
-
-  }
-
-
 }
+

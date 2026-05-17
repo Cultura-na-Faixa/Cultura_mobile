@@ -1,33 +1,60 @@
-.tab2_content{
+.tab2_content {
   display: flex;
-  justify-content: center;  /* centraliza horizontal */
-  align-items: center;      /* centraliza vertical */
+  justify-content: center;
+  align-items: center;
   gap: 16px;
   flex-direction: column;
-
   margin-top: 10%;
-
 }
 
-.lista, ion-searchbar{
-    width: 80%;
+.lista, ion-searchbar {
+  width: 80%;
 }
 
-.category_content{
+.category_content {
   display: flex;
-  justify-content: center;  /* centraliza horizontal */
-  align-items: center;      /* centraliza vertical */
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
-
   margin-top: 5%;
 }
 
-ion-card{
+.card_categoria {
   width: 30%;
   height: 30%;
 }
 
+.card_categoria ion-card-title {
+  font-size: 70%;
+}
 
-ion-card-title{
-  text-size-adjust: 70%;
+// cards de eventos (busca e modal) ficam igual tab1
+.card_evento {
+  width: 90%;
+}
+
+.info {
+  padding-top: 20px;
+  gap: 16px;
+}
+
+.favorito {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+ion-icon {
+  padding-left: 70%;
+  font-size: 30px;
+}
+
+/*.btn_voltar {
+  padding: 8px 16px;
+}*/
+
+.botao_voltar {
+   width: 85px;
+   height: auto;
+   margin-left: -35%;
 }
