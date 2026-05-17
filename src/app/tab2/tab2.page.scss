@@ -30,7 +30,11 @@
 
 // cards de eventos (busca e modal) ficam igual tab1
 .card_evento {
-  width: 90%;
+  display: flex;
+  justify-content: center;  /* centraliza horizontal */
+  align-items: center;      /* centraliza vertical */
+  gap: 16px;
+  flex-direction: column;
 }
 
 .info {

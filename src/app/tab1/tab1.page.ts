@@ -10,6 +10,7 @@ import { SupabaseService } from '../services/supabase.service';
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
+  standalone: true,
   imports: [
     IonHeader,
     IonToolbar,

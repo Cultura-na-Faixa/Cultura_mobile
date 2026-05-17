@@ -1,38 +1,7 @@
-/*import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle , IonSearchbar, IonList, IonItem, IonLabel} from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
-
-
-@Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss'],
-  imports: [
-    IonHeader, 
-    IonToolbar, 
-    IonTitle, 
-    IonContent, 
-    ExploreContainerComponent,
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
-    IonCardSubtitle,
-    IonCardTitle,
-    IonSearchbar,
-    IonList,
-    IonItem,
-    IonLabel
-  ]
-})
-export class Tab2Page {
-
-
-  constructor() {}
-
-}*/
-
 import { Component, OnInit } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonSearchbar, IonList, IonItem, IonLabel, IonButton, IonButtons, IonIcon, IonTabButton } from '@ionic/angular/standalone';
+import {
+  IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonSearchbar, IonList, IonItem, IonLabel, IonButton, IonButtons, IonIcon, IonTabButton,
+  IonModal} from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -65,12 +34,15 @@ import { SupabaseService } from '../services/supabase.service';
     IonTabButton,
     CommonModule,
     FormsModule,
+    IonModal
   ]
 })
 export class Tab2Page implements OnInit {
 
   termoBusca = '';
   categoriaAtiva = '';
+  isModalOpen = false;
+  eventoSelecionado: any = null;
 
   todosEventos = [
     {
@@ -150,6 +122,18 @@ export class Tab2Page implements OnInit {
       );
     }
   }
+
+  // modal
+
+  abrirModal(evento: any) {
+    this.eventoSelecionado = evento;
+    this.isModalOpen = true;
+  }
+
+  fecharModal() {
+    this.isModalOpen = false;
+  }
+
 
   buscar(event: any) {
     const termo = event.target.value?.toLowerCase() || '';
